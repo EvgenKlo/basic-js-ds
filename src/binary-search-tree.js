@@ -42,13 +42,57 @@ class BinarySearchTree {
     // remove line with error and write your code here
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
+  has(data) {
+    let result;
+    function findData(node){
+      if(node.data === data){
+        result = true;
+      } else {
+        if(node.data > data){
+          if(node.left !== null){
+            findData(node.left)
+          } else {
+            result = false;
+          }
+        } else {
+          if(node.right !== null){
+            findData(node.right)
+          } else {
+            result = false;
+          }
+        }
+      }
+    }
+    findData(this.tree);
+    return result;
+    //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
+  find(data) {
+    let result;
+    function findData(node){
+      if(node.data === data){
+        result = node;
+      } else {
+        if(node.data > data){
+          if(node.left !== null){
+            findData(node.left)
+          } else {
+            result = null;
+          }
+        } else {
+          if(node.right !== null){
+            findData(node.right)
+          } else {
+            result = null;
+          }
+        }
+      }
+    }
+    findData(this.tree);
+    return result;
+    //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
@@ -58,12 +102,32 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
+    let result;
+    function findData(node){
+      if(node.left === null){
+        result = node.data;
+      } else {
+        findData(node.left)
+      }
+    }
+    findData(this.tree);
+    return result;
+    //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
+    let result;
+    function findData(node){
+      if(node.right === null){
+        result = node.data;
+      } else {
+        findData(node.right)
+      }
+    }
+    findData(this.tree);
+    return result;
+    //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 }
