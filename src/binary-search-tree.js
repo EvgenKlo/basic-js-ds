@@ -98,6 +98,10 @@ class BinarySearchTree {
 
   remove(data) {
     console.dir(data)
+    /* function removeNode(node, data){
+      
+    }
+    this.tree = removeNode(this.tree, data); */
     //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
